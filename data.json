@@ -7,13 +7,13 @@
   "phases": {
     "education1": {
       "name": "Education Phase 1",
-      "goal": 6000,
+      "goal": 7000,
       "raised": 0,
       "donors": 0
     },
     "education2": {
       "name": "Education Phase 2",
-      "goal": 6000,
+      "goal": 7000,
       "raised": 0,
       "donors": 0
     },
