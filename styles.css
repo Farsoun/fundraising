@@ -16,21 +16,41 @@
   box-sizing: border-box;
 }
 
-a {
-  color: inherit !important;
-  text-decoration: none !important;
-}
-
-a:hover {
-  opacity: 0.9;
-}
-
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   background: radial-gradient(circle at top, #1f2937 0, #020617 40%, #000 100%);
   color: var(--text);
 }
+
+/* Make all links look exactly like normal text */
+a,
+a:link,
+a:visited,
+a:active,
+.page a,
+.card a,
+.badge a,
+header a {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-weight: inherit !important;
+}
+
+/* Hover also stays identical to normal text */
+a:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+}
+
+/* Remove blue underline by browser */
+a:focus {
+  outline: none !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
 
 .page {
   max-width: 960px;
