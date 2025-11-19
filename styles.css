@@ -74,6 +74,10 @@ h1 {
   max-width: 520px;
 }
 
+p {
+  font-size: 12px
+}
+
 .overall-card {
   background: radial-gradient(circle at top left, #1f2937, #020617);
   border-radius: var(--radius-xl);
