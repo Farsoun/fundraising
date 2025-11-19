@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Support Rita – Education & Mother’s Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Community-powered education & medical care
+      </div>
+      <h1>Help fund my studies & my mother’s health</h1>
+      <p class="subtitle">
+        I’m raising funds to continue my education and secure medical insurance for my mother.
+        You can support by donating directly or choosing one of the services and products I offer.
+      </p>
+    </header>
+
+    <!-- Overall progress card -->
+    <section class="overall-card">
+      <div class="overall-stats">
+        <div class="stat-pill">
+          Raised so far: <strong id="overall-raised" style="margin-left:4px;">$0</strong>
+        </div>
+        <div class="stat-pill">
+          Goal: <strong id="overall-goal" style="margin-left:4px;">$40,000</strong>
+        </div>
+        <div class="stat-pill" id="overall-donors">0 supporters</div>
+      </div>
+      <div class="progress-wrapper">
+        <div class="progress-label-row">
+          <span>Overall progress</span>
+          <span>Automatically unlocks the next phase when one is fully funded</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="overall-progress"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phases grid -->
+    <section>
+      <h2 class="section-title">Funding phases</h2>
+      <p class="section-subtitle">
+        Click to see details for each phase. Phase 2 & 3 are locked until the previous phase is fully funded.
+      </p>
+      <div class="grid">
+        <!-- Education Phase 1 -->
+        <a class="card" href="phase-education-1.html" data-phase="education1">
+          <div class="card-tag-row">
+            <span class="card-tag">Education</span>
+            <span class="card-lock">🟢 Open</span>
+          </div>
+          <div class="card-title">Education – Phase 1</div>
+          <div class="card-meta">0 supporters</div>
+          <div class="card-progress">
+            <div class="card-progress-bar">
+              <div class="card-progress-fill"></div>
+            </div>
+            <div class="card-progress-label">
+              <span>$0 / $10,000</span>
+              <span>0%</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Education Phase 2 -->
+        <a class="card card-locked" href="phase-education-2.html" data-phase="education2">
+          <div class="card-tag-row">
+            <span class="card-tag">Education</span>
+            <span class="card-lock">🔒 Locked</span>
+          </div>
+          <div class="card-title">Education – Phase 2</div>
+          <div class="card-meta">0 supporters</div>
+          <div class="card-progress">
+            <div class="card-progress-bar">
+              <div class="card-progress-fill"></div>
+            </div>
+            <div class="card-progress-label">
+              <span>$0 / $10,000</span>
+              <span>0%</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Education Phase 3 -->
+        <a class="card card-locked" href="phase-education-3.html" data-phase="education3">
+          <div class="card-tag-row">
+            <span class="card-tag">Education</span>
+            <span class="card-lock">🔒 Locked</span>
+          </div>
+          <div class="card-title">Education – Phase 3</div>
+          <div class="card-meta">0 supporters</div>
+          <div class="card-progress">
+            <div class="card-progress-bar">
+              <div class="card-progress-fill"></div>
+            </div>
+            <div class="card-progress-label">
+              <span>$0 / $10,000</span>
+              <span>0%</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Mother Insurance (2 years) -->
+        <a class="card" href="mother-insurance.html" data-phase="mother2025">
+          <div class="card-tag-row">
+            <span class="card-tag">Mother’s Insurance</span>
+            <span class="card-lock">🟢 Open</span>
+          </div>
+          <div class="card-title">Mother’s Insurance – 2025 & 2026</div>
+          <div class="card-meta">0 supporters</div>
+          <div class="card-progress">
+            <div class="card-progress-bar">
+              <div class="card-progress-fill"></div>
+            </div>
+            <div class="card-progress-label">
+              <span>$0 / $10,000</span>
+              <span>0%</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Services + Form -->
+    <section>
+      <h2 class="section-title">Support by choosing a service or product</h2>
+      <p class="section-subtitle">
+        You can pick more than one option. After you submit the form, I’ll contact you with payment details.
+      </p>
+
+      <div class="services-layout">
+        <!-- Services list -->
+        <div>
+          <h3 class="service-group-title">Therapy & NLP (Lebanon only)</h3>
+          <p class="service-note">
+            Professional therapy and NLP sessions. Online or in-person (in Lebanon).
+          </p>
+          <ul class="service-list">
+            <li class="service-item">
+              <span class="service-name">1 therapy session</span>
+              <span class="service-price">$150</span>
+            </li>
+            <li class="service-item">
+              <span class="service-name">2 therapy sessions with NLP</span>
+              <span class="service-price">$300</span>
+            </li>
+            <li class="service-item">
+              <span class="service-name">3 therapy sessions with NLP + 30% off future sessions</span>
+              <span class="service-price">$450</span>
+            </li>
+          </ul>
+
+          <h3 class="service-group-title">Holistic body products (Lebanon only)</h3>
+          <p class="service-note">
+            100% chemical free, custom-made according to your skin type.
+          </p>
+          <ul class="service-list">
+            <li class="service-item">
+              <span class="service-name">Body scrub (personalised)</span>
+              <span class="service-price">$20</span>
+            </li>
+            <li class="service-item">
+              <span class="service-name">Body scrub + moisturiser (personalised)</span>
+              <span class="service-price">$30</span>
+            </li>
+            <li class="service-item">
+              <span class="service-name">Pyramid lamp</span>
+              <span class="service-price">$50</span>
+            </li>
+            <li class="service-item">
+              <span class="service-name">1-month curated box (skin + aromatherapy + self-love)</span>
+              <span class="service-price">$100</span>
+            </li>
+            <li class="service-item">
+              <span class="service-name">1-year monthly curated box (skin, relaxation & health)</span>
+              <span class="service-price">$1200</span>
+            </li>
+          </ul>
+
+          <h3 class="service-group-title">Online services (worldwide)</h3>
+          <p class="service-note">
+            Tarot readings and web development, available anywhere online.
+          </p>
+          <ul class="service-list">
+            <li class="service-item">
+              <span class="service-name">Basic tarot reading (guidance, past–present–future)</span>
+              <span class="service-price">$20</span>
+            </li>
+            <li class="service-item">
+              <span class="service-name">50-minute tarot reading</span>
+              <span class="service-price">$100</span>
+            </li>
+            <li class="service-item">
+              <span class="service-name">Website development</span>
+              <span class="service-price">$500</span>
+            </li>
+            <li class="service-item">
+              <span class="service-name">E-commerce website development</span>
+              <span class="service-price">$1000</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Form -->
+        <div class="form-card">
+          <form id="support-form">
+            <div class="form-row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Your full name" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="farsoun@icloud.com" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="country">Country / City</label>
+                <input id="country" name="country" placeholder="e.g. Lebanon – Beirut" />
+              </div>
+              <div>
+                <label for="custom-amount">Planned amount (optional)</label>
+                <input id="custom-amount" name="custom-amount" placeholder="$" />
+              </div>
+            </div>
+
+            <label>Choose one or more options</label>
+            <div class="checkbox-grid">
+              <!-- Therapy & NLP -->
+              <label class="checkbox-pill">
+                <input type="checkbox" value="1 therapy session – $150" />
+                <span>1 therapy session – $150 (Lebanon)</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="2 therapy sessions with NLP – $300" />
+                <span>2 therapy sessions + NLP – $300 (Lebanon)</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="3 therapy sessions with NLP + 30% off – $450" />
+                <span>3 sessions + 30% off – $450 (Lebanon)</span>
+              </label>
+
+              <!-- Body products -->
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Body scrub – $20" />
+                <span>Body scrub – $20 (Lebanon)</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Body scrub + moisturiser – $30" />
+                <span>Scrub + moisturiser – $30 (Lebanon)</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Pyramid lamp – $50" />
+                <span>Pyramid lamp – $50</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="1-month curated box – $100" />
+                <span>1-month curated box – $100 (Lebanon)</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="1-year curated box – $1200" />
+                <span>1-year curated box – $1200</span>
+              </label>
+
+              <!-- Online services -->
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Basic tarot reading – $20" />
+                <span>Basic tarot reading – $20</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="50-min tarot reading – $100" />
+                <span>50-min tarot reading – $100</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Website development – $500" />
+                <span>Website development – $500</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="E-commerce website development – $1000" />
+                <span>E-commerce website – $1000</span>
+              </label>
+
+              <!-- Donation only -->
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Donation only – no service (thank you note)" />
+                <span>Donation only – no service</span>
+              </label>
+            </div>
+
+            <label for="message">Message (optional)</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell me if you prefer to support education, mother’s insurance, or let me decide where it’s most needed."
+            ></textarea>
+
+            <div class="btn-row">
+              <button type="submit" class="btn-primary">Send request</button>
+              <div class="helper-text">
+                I’ll reply with details to pay via Whish, NEO, OMT or bank transfer.
+                Nothing is charged automatically.
+              </div>
+            </div>
+
+            <div class="payment-methods">
+              <span class="payment-pill">Whish</span>
+              <span class="payment-pill">NEO</span>
+              <span class="payment-pill">OMT</span>
+              <span class="payment-pill">Bank transfer</span>
+            </div>
+          </form>
+
+          <p class="footer-note">
+            If you want to donate any amount without a service, select
+            <strong>“Donation only – no service”</strong> and write the amount above.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

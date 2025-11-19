@@ -1,0 +1,39 @@
+{
+  "overall": {
+    "donors": 0,
+    "raised": 0,
+    "goal": 37333
+  },
+  "phases": {
+    "education1": {
+      "name": "Education Phase 1",
+      "goal": 6000,
+      "raised": 0,
+      "donors": 0
+    },
+    "education2": {
+      "name": "Education Phase 2",
+      "goal": 6000,
+      "raised": 0,
+      "donors": 0
+    },
+    "education3": {
+      "name": "Education Phase 3",
+      "goal": 10000,
+      "raised": 0,
+      "donors": 0
+    },
+    "mother2025": {
+      "name": "Mother's Insurance 2025",
+      "goal": 5000,
+      "raised": 0,
+      "donors": 0
+    },
+    "mother2026": {
+      "name": "Mother's Insurance 2026",
+      "goal": 5000,
+      "raised": 0,
+      "donors": 0
+    }
+  }
+}

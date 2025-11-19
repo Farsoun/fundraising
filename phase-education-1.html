@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Education – Phase 1 | Support Rita</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a href="index.html" class="badge">
+        ← Back to overview
+      </a>
+      <h1>Education – Phase 1</h1>
+      <p class="subtitle">
+        This phase covers my first year of tuition, books and study materials. Completing this phase
+        gives me stability to focus on my health science and business studies.
+      </p>
+    </header>
+
+    <section class="overall-card">
+      <div class="overall-stats">
+        <div class="stat-pill">
+          <strong id="phase1-raised">$0</strong> raised
+        </div>
+        <div class="stat-pill">
+          Goal: <strong id="phase1-goal" style="margin-left:4px;">$10,000</strong>
+        </div>
+        <div class="stat-pill" id="phase1-donors">0 supporters</div>
+      </div>
+
+      <div class="progress-wrapper">
+        <div class="progress-label-row">
+          <span>Phase progress</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="phase1-progress"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">How this phase helps</h2>
+      <p class="section-subtitle">
+        Here you can describe in more detail where the money goes: tuition, books, transport, exam
+        fees, etc. We can refine this text later together.
+      </p>
+      <p class="footer-note">
+        To support this phase, choose any service or “Donation only” on the main page and mention
+        “Education Phase 1” in your message.
+      </p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // reuse data.json but show only this phase
+    async function loadPhase() {
+      try {
+        const res = await fetch('data.json');
+        const data = await res.json();
+        const p = data.phases.education1;
+        const raised = p.raised || 0;
+        const goal = p.goal || 0;
+        const donors = p.donors || 0;
+
+        const pct = goal ? Math.min(100, Math.round((raised / goal) * 100)) : 0;
+
+        document.getElementById('phase1-raised').textContent = '$' + raised.toLocaleString();
+        document.getElementById('phase1-goal').textContent = '$' + goal.toLocaleString();
+        document.getElementById('phase1-donors').textContent = donors + ' supporters';
+        document.getElementById('phase1-progress').style.width = pct + '%';
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', loadPhase);
+  </script>
+</body>
+</html>
