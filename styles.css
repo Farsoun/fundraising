@@ -29,11 +29,17 @@ a, a:link, a:visited, a:active {
   -webkit-tap-highlight-color: transparent;
 }
 
+.card:hover,
+.card:active,
 .card:focus,
-.card:active {
-  outline: none !important;
-  box-shadow: var(--shadow-soft);
+.card a,
+.card a:hover,
+.card a:active,
+.card a:focus {
+  text-decoration: none !important;
+  color: inherit !important;
 }
+
 .card,
 .card *,
 .card-title,
