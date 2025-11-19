@@ -8,8 +8,8 @@
     "education1": {
       "name": "Education Phase 1",
       "goal": 7000,
-      "raised": 0,
-      "donors": 0
+      "raised": 50,
+      "donors": 1
     },
     "education2": {
       "name": "Education Phase 2",
