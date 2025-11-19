@@ -22,75 +22,83 @@
     <section class="overall-card">
       <div class="overall-stats">
         <div class="stat-pill">
-          <strong id="phase1-raised">$0</strong> raised
+          <strong id="insurance-raised">$0</strong> raised
         </div>
         <div class="stat-pill">
-          Goal: <strong id="phase1-goal" style="margin-left:4px;">$10,000</strong>
+          Goal: <strong id="insurance-goal" style="margin-left:4px;">$10,000</strong>
         </div>
-        <div class="stat-pill" id="phase1-donors">0 supporters</div>
+        <div class="stat-pill" id="insurance-donors">0 supporters</div>
       </div>
 
       <div class="progress-wrapper">
         <div class="progress-label-row">
-          <span>Phase progress</span>
+          <span>Insurance progress</span>
         </div>
         <div class="progress-bar">
-          <div class="progress-fill" id="phase1-progress"></div>
+          <div class="progress-fill" id="insurance-progress"></div>
         </div>
       </div>
     </section>
 
     <section>
-  <h2 class="section-title">How this support helps</h2>
-  <p class="section-subtitle">
-    This fund covers two years of health insurance and essential medication for my mother.
-    Insurance in Lebanon is becoming harder to sustain financially, especially with ongoing economic
-    instability. Your contribution ensures she receives:
-  </p>
+      <h2 class="section-title">How this support helps</h2>
+      <p class="section-subtitle">
+        This fund covers two years of health insurance and essential medication for my mother.
+        Insurance in Lebanon is becoming harder to sustain financially, especially with ongoing economic
+        instability. Your contribution ensures she receives:
+      </p>
 
-  <ul class="footer-note" style="line-height:1.6; margin-top:8px;">
-    <li>✔ Full medical insurance coverage for 2025</li>
-    <li>✔ Full medical insurance coverage for 2026</li>
-    <li>✔ Access to essential medication throughout the year</li>
-    <li>✔ Protection from emergency medical expenses</li>
-    <li>✔ Stability and peace of mind during a difficult period</li>
-  </ul>
+      <ul class="footer-note" style="line-height:1.6; margin-top:8px;">
+        <li>✔ Full medical insurance coverage for 2025</li>
+        <li>✔ Full medical insurance coverage for 2026</li>
+        <li>✔ Access to essential medication throughout the year</li>
+        <li>✔ Protection from emergency medical expenses</li>
+        <li>✔ Stability and peace of mind during a difficult period</li>
+      </ul>
 
-  <p class="footer-note" style="margin-top:14px;">
-    To support this goal, you can choose any service on the main page or select
-    <strong>"Support only – no service.”</strong>  
-    If you prefer, you can also request that your contribution go
-    <strong>directly and exclusively to the insurance fund.</strong>
-  </p>
+      <p class="footer-note" style="margin-top:14px;">
+        To support this goal, you can choose any service on the main page or select
+        <strong>“Support only – no service.”</strong>
+        If you prefer, you can also request that your contribution go
+        <strong>directly and exclusively to the insurance fund.</strong>
+      </p>
 
-  <p class="footer-note" style="margin-top:12px;">
-    Thank you for helping me protect my mother’s health. ❤️ Your support truly makes a difference.
-  </p>
-</section>
+      <p class="footer-note" style="margin-top:12px;">
+        Thank you for helping me protect my mother’s health. ❤️ Your support truly makes a difference.
+      </p>
+    </section>
   </div>
 
   <script src="script.js"></script>
   <script>
-    // reuse data.json but show only this phase
+    // reuse data.json but show only the insurance phases (2025 + 2026)
     async function loadPhase() {
       try {
         const res = await fetch('data.json');
         const data = await res.json();
-        const p = data.phases.education1;
-        const raised = p.raised || 0;
-        const goal = p.goal || 0;
-        const donors = p.donors || 0;
+
+        const p2025 = data.phases.mother2025 || {};
+        const p2026 = data.phases.mother2026 || {};
+
+        // combine both years
+        const raised = (p2025.raised || 0) + (p2026.raised || 0);
+        const goal = (p2025.goal || 0) + (p2026.goal || 0);
+        const donors = (p2025.donors || 0) + (p2026.donors || 0);
 
         const pct = goal ? Math.min(100, Math.round((raised / goal) * 100)) : 0;
 
-        document.getElementById('phase1-raised').textContent = '$' + raised.toLocaleString();
-        document.getElementById('phase1-goal').textContent = '$' + goal.toLocaleString();
-        document.getElementById('phase1-donors').textContent = donors + ' supporters';
-        document.getElementById('phase1-progress').style.width = pct + '%';
+        document.getElementById('insurance-raised').textContent =
+          '$' + raised.toLocaleString();
+        document.getElementById('insurance-goal').textContent =
+          '$' + goal.toLocaleString();
+        document.getElementById('insurance-donors').textContent =
+          donors + (donors === 1 ? ' supporter' : ' supporters');
+        document.getElementById('insurance-progress').style.width = pct + '%';
       } catch (e) {
         console.error(e);
       }
     }
+
     document.addEventListener('DOMContentLoaded', loadPhase);
   </script>
 </body>

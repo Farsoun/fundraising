@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Education – Phase 1 | Support</title>
+  <title>Education – Phase 3 | Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -14,20 +14,21 @@
       </a>
       <h1>Education – Phase 3</h1>
       <p class="subtitle">
-        This phase covers my part 3 of tuition, books and study materials. Completing this phase
-        gives me stability to focus on my health science and certificates.
+        This phase covers the final part of my tuition, books and study materials. Completing this
+        phase allows me to finish my Health Science studies and graduate with the qualifications I
+       ’ve been working toward.
       </p>
     </header>
 
     <section class="overall-card">
       <div class="overall-stats">
         <div class="stat-pill">
-          <strong id="phase1-raised">$0</strong> raised
+          <strong id="phase3-raised">$0</strong> raised
         </div>
         <div class="stat-pill">
-          Goal: <strong id="phase1-goal" style="margin-left:4px;">$10,000</strong>
+          Goal: <strong id="phase3-goal" style="margin-left:4px;">$10,000</strong>
         </div>
-        <div class="stat-pill" id="phase1-donors">0 supporters</div>
+        <div class="stat-pill" id="phase3-donors">0 supporters</div>
       </div>
 
       <div class="progress-wrapper">
@@ -35,7 +36,7 @@
           <span>Phase progress</span>
         </div>
         <div class="progress-bar">
-          <div class="progress-fill" id="phase1-progress"></div>
+          <div class="progress-fill" id="phase3-progress"></div>
         </div>
       </div>
     </section>
@@ -43,38 +44,43 @@
     <section>
       <h2 class="section-title">How this phase helps</h2>
       <p class="section-subtitle">
-        This phase covers my part 3 of tuition, books and study materials. Completing this phase
-        gives me stability to focus on my health science and certificates.
+        This phase supports the final stretch of my education: completing remaining courses,
+        paying for exams, and securing the materials I need to finish strong and move into my
+        professional life in health and holistic care.
       </p>
       <p class="footer-note">
-        To support this phase, choose any service or “Support only” on the main page and mention
-        “Education Phase 3” in your message.
+        To support this phase, choose any service or select <strong>“Support only”</strong> on the
+        main page and mention <strong>“Education Phase 3”</strong> in your message.
       </p>
     </section>
   </div>
 
   <script src="script.js"></script>
   <script>
-    // reuse data.json but show only this phase
+    // reuse data.json but show only Education Phase 3
     async function loadPhase() {
       try {
         const res = await fetch('data.json');
         const data = await res.json();
-        const p = data.phases.education1;
+        const p = data.phases.education3; // ✅ use education3
+
         const raised = p.raised || 0;
         const goal = p.goal || 0;
         const donors = p.donors || 0;
-
         const pct = goal ? Math.min(100, Math.round((raised / goal) * 100)) : 0;
 
-        document.getElementById('phase1-raised').textContent = '$' + raised.toLocaleString();
-        document.getElementById('phase1-goal').textContent = '$' + goal.toLocaleString();
-        document.getElementById('phase1-donors').textContent = donors + ' supporters';
-        document.getElementById('phase1-progress').style.width = pct + '%';
+        document.getElementById('phase3-raised').textContent =
+          '$' + raised.toLocaleString();
+        document.getElementById('phase3-goal').textContent =
+          '$' + goal.toLocaleString();
+        document.getElementById('phase3-donors').textContent =
+          donors + (donors === 1 ? ' supporter' : ' supporters');
+        document.getElementById('phase3-progress').style.width = pct + '%';
       } catch (e) {
         console.error(e);
       }
     }
+
     document.addEventListener('DOMContentLoaded', loadPhase);
   </script>
 </body>

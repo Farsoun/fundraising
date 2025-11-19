@@ -14,20 +14,21 @@
       </a>
       <h1>Education – Phase 2</h1>
       <p class="subtitle">
-        This phase covers my part 2 of tuition, books and study materials. Completing this phase
-        gives me stability to focus on my health science and certificates.
+        This phase covers the second part of my tuition, books, and study materials. Completing this
+        phase allows me to continue my Health Science studies and earn the certifications required
+        for my future professional path.
       </p>
     </header>
 
     <section class="overall-card">
       <div class="overall-stats">
         <div class="stat-pill">
-          <strong id="phase1-raised">$0</strong> raised
+          <strong id="phase2-raised">$0</strong> raised
         </div>
         <div class="stat-pill">
-          Goal: <strong id="phase1-goal" style="margin-left:4px;">$7,000</strong>
+          Goal: <strong id="phase2-goal" style="margin-left:4px;">$7,000</strong>
         </div>
-        <div class="stat-pill" id="phase1-donors">0 supporters</div>
+        <div class="stat-pill" id="phase2-donors">0 supporters</div>
       </div>
 
       <div class="progress-wrapper">
@@ -35,7 +36,7 @@
           <span>Phase progress</span>
         </div>
         <div class="progress-bar">
-          <div class="progress-fill" id="phase1-progress"></div>
+          <div class="progress-fill" id="phase2-progress"></div>
         </div>
       </div>
     </section>
@@ -43,38 +44,45 @@
     <section>
       <h2 class="section-title">How this phase helps</h2>
       <p class="section-subtitle">
-        Your support will help me continue my studies and earn my certificates
-
+        Your support helps me continue my studies with stability, allowing me to focus on completing
+        my major subjects and certificates without interruptions.
       </p>
+
       <p class="footer-note">
-        To support this phase, choose any service or "Support only” on the main page and mention
-        “Education Phase 2” in your message.
+        To support this phase, choose any service or select <strong>“Support only”</strong> on the
+        main page and mention <strong>“Education Phase 2”</strong> in your message.
       </p>
     </section>
   </div>
 
   <script src="script.js"></script>
   <script>
-    // reuse data.json but show only this phase
+    // Load Phase 2 data from data.json
     async function loadPhase() {
       try {
         const res = await fetch('data.json');
         const data = await res.json();
-        const p = data.phases.education1;
+        const p = data.phases.education2; // FIXED
+
         const raised = p.raised || 0;
         const goal = p.goal || 0;
         const donors = p.donors || 0;
-
         const pct = goal ? Math.min(100, Math.round((raised / goal) * 100)) : 0;
 
-        document.getElementById('phase1-raised').textContent = '$' + raised.toLocaleString();
-        document.getElementById('phase1-goal').textContent = '$' + goal.toLocaleString();
-        document.getElementById('phase1-donors').textContent = donors + ' supporters';
-        document.getElementById('phase1-progress').style.width = pct + '%';
+        document.getElementById('phase2-raised').textContent =
+          '$' + raised.toLocaleString();
+        document.getElementById('phase2-goal').textContent =
+          '$' + goal.toLocaleString();
+        document.getElementById('phase2-donors').textContent =
+          donors + (donors === 1 ? ' supporter' : ' supporters');
+        document.getElementById('phase2-progress').style.width =
+          pct + '%';
+
       } catch (e) {
         console.error(e);
       }
     }
+
     document.addEventListener('DOMContentLoaded', loadPhase);
   </script>
 </body>
