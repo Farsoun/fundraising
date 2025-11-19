@@ -34,7 +34,13 @@ a, a:link, a:visited, a:active {
   outline: none !important;
   box-shadow: var(--shadow-soft);
 }
-
+.card,
+.card *,
+.card-title,
+.card-title * {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
 /* Hover also stays identical to normal text */
 a:hover {
   color: inherit !important;
