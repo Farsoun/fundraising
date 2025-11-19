@@ -16,6 +16,15 @@
   box-sizing: border-box;
 }
 
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
