@@ -44,34 +44,26 @@
       <h2 class="section-title">How this support helps</h2>
       <p class="section-subtitle">
         This fund covers two years of health insurance and essential medication for my mother.
-        Insurance in Lebanon is becoming harder to sustain financially, especially with ongoing economic
-        instability. Your contribution ensures she receives:
+        Your contribution ensures:
       </p>
 
       <ul class="footer-note" style="line-height:1.6; margin-top:8px;">
         <li>✔ Full medical insurance coverage for 2025</li>
         <li>✔ Full medical insurance coverage for 2026</li>
-        <li>✔ Access to essential medication throughout the year</li>
-        <li>✔ Protection from emergency medical expenses</li>
-        <li>✔ Stability and peace of mind during a difficult period</li>
+        <li>✔ Access to essential medication</li>
+        <li>✔ Emergency medical protection</li>
       </ul>
 
       <p class="footer-note" style="margin-top:14px;">
-        To support this goal, you can choose any service on the main page or select
-        <strong>“Support only – no service.”</strong>
-        If you prefer, you can also request that your contribution go
-        <strong>directly and exclusively to the insurance fund.</strong>
-      </p>
-
-      <p class="footer-note" style="margin-top:12px;">
-        Thank you for helping me protect my mother’s health. ❤️ Your support truly makes a difference.
+        To support this goal, choose any service or select <strong>"Support only"</strong> on the main page.
+        You may also request that your contribution go <strong>directly to the insurance fund</strong>.
       </p>
     </section>
   </div>
 
   <script src="script.js"></script>
   <script>
-    // reuse data.json but show only the insurance phases (2025 + 2026)
+    // Load Insurance (2025 + 2026) data from data.json
     async function loadPhase() {
       try {
         const res = await fetch('data.json');
@@ -80,9 +72,9 @@
         const p2025 = data.phases.mother2025 || {};
         const p2026 = data.phases.mother2026 || {};
 
-        // combine both years
+        // Combine both years
         const raised = (p2025.raised || 0) + (p2026.raised || 0);
-        const goal = (p2025.goal || 0) + (p2026.goal || 0);
+        const goal = 10000; // 🔥 FORCE total goal to $10,000
         const donors = (p2025.donors || 0) + (p2026.donors || 0);
 
         const pct = goal ? Math.min(100, Math.round((raised / goal) * 100)) : 0;
@@ -93,7 +85,8 @@
           '$' + goal.toLocaleString();
         document.getElementById('insurance-donors').textContent =
           donors + (donors === 1 ? ' supporter' : ' supporters');
-        document.getElementById('insurance-progress').style.width = pct + '%';
+        document.getElementById('insurance-progress').style.width =
+          pct + '%';
       } catch (e) {
         console.error(e);
       }
